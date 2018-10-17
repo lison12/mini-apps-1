@@ -7,7 +7,7 @@
   </head>
   <body>
   	<div id="border">
-	    <form action="/csv" method="post">
+	    <form action="/" method="post">
         <h2>JSON to CSV</h2>
         <div>
           <label for="msg">JSON Text: </label> 
@@ -19,8 +19,20 @@
 	    </form>
 	    <div id="csv">
         <label for="name">CSV Text: </label> 
-        <textarea type="text" name="csv"></textarea>
+        <textarea id="csv-text" type="text" name="csv"></textarea>
       </div>
+
+      <form id="input" action="/" method="post" target="formatcsv" enctype="multipart/form-data">
+        <label for="name">Choose File: </label> 
+        <input id="inputfile" type="file" name="json_text"></input>
+        <button id="submit" type="submit" value="Read">Readfile</button>
+      </form>
+
+			<div id="format">
+				<h3>Formatted csv</h3>
+				<iframe id="frame" name="formatcsv"></iframe>
+			</div>
+
 	  </div>
   </body>
 </html>

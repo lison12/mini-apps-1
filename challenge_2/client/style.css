@@ -1,12 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
 form {
   /* Just to center the form on the page */
   margin: 0 auto;
-  width: 500px;
+  width: 700px;
 }
 
 #border {
   margin: 0 auto;
-  width: 500px;
+  width: 700px;
+  background-color: #f3f0f0;
   /* To see the outline of the form */
   padding: 1em;
   border: 1px solid #CCC;
@@ -15,6 +20,18 @@ form {
 
 #csv {
   margin: 20px auto;
+  width: 700px;
+}
+
+#format {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+#frame {
+  margin: 0 auto;
+  background-color: white;
   width: 500px;
 }
 
@@ -35,7 +52,7 @@ input, textarea {
   font: 1em sans-serif;
 
   /* To give the same size to all text fields */
-  width: 350px;
+  width: 500px;
   box-sizing: border-box;
 
   /* To harmonize the look & feel of text field border */
