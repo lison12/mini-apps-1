@@ -2,13 +2,24 @@ var mysql      = require('mysql');
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  database : 'my_db'
+  database : 'store'
 });
  
 
+var insertAll = function(name, email, password, address, phone, creditcard, expiry, cvv, billingzip, callback) {  
+  var query = `INSERT INTO checkout (name, email, password, address, phone, creditcard, expiry, cvv, billingzip) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`;
+  var value = [name, email, password, address, phone, creditcard, expiry, cvv, billingzip];
+	connection.query(query, value, function (error, results, fields) {
+  	if (error) {
+  		callback(error, null);
+  	} else {
+  		callback(null, results)
+  	}
+	});
+}	
  
-connection.query('SELECT 1 + 1 AS solution', function (error, results, fields) {
-  if (error) throw error;
-  console.log('The solution is: ', results[0].solution);
-});
- 
+
+module.exports.insertAll = insertAll;
+
+
+	
