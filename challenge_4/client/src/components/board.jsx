@@ -5,13 +5,14 @@ import Row from './rows.jsx';
 var Board = (props) => {
 	return (
 		<div className="board">
-			{props.board.map((row, i) => <Row key={i} row={row}/> )}
+			{props.board.map((row, i) => <Row key={i} row={row} addChip={props.addChip}/> )}
 		</div>
 	)
 }	
 
 	
 
+export default Board;
 
 
 
@@ -45,5 +46,3 @@ var Board = (props) => {
 //     );
 //   }
 // }
-
-export default Board;

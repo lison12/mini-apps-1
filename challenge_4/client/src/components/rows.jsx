@@ -6,7 +6,7 @@ var Row = (props) => {
 		<div className="row">
 			{props.row.map((col, i) => {
 				return (
-					<div className={`column ${col}`} key={i}> {col} </div>
+					<button className={`column ${col}`} key={i} data-col={i} onClick={props.addChip}> {col} </button>
 				);
 			})}
 		</div>
